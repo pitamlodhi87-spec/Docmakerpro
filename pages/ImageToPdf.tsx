@@ -156,7 +156,7 @@ const ImageToPdf: React.FC = () => {
         const blobUrl = URL.createObjectURL(pdfOutput);
         const link = document.createElement('a');
         link.href = blobUrl;
-        link.download = 'FileMakerOn-images.pdf';
+        link.download = 'FileMaker-images.pdf';
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
@@ -376,7 +376,7 @@ const ImageToPdf: React.FC = () => {
         
         <p>
           Managing digital documents often requires combining multiple image files into a single, professional PDF. 
-          FileMakerOn offers a robust <strong>Image to PDF Converter</strong> that is perfect for students, professionals, and anyone organizing their digital life.
+          FileMaker offers a robust <strong>Image to PDF Converter</strong> that is perfect for students, professionals, and anyone organizing their digital life.
         </p>
 
         <h3 className="text-2xl font-bold text-gray-900 mt-8 mb-4">Common Uses for Image to PDF Conversion</h3>

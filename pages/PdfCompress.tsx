@@ -172,7 +172,7 @@ const PdfCompress: React.FC = () => {
         <h2 className="text-3xl font-bold text-gray-900 mb-6">How to Compress PDF Files for Free</h2>
         <p>
            Large PDF files can be a headache. They are slow to email, impossible to upload to certain portals, and take up valuable storage space on your phone or computer. 
-           FileMakerOn's <strong>PDF Compressor</strong> solves this problem by intelligently optimizing the visual content within your document.
+           FileMaker's <strong>PDF Compressor</strong> solves this problem by intelligently optimizing the visual content within your document.
         </p>
 
         <h3 className="text-2xl font-bold text-gray-900 mt-8 mb-4">Why is my PDF file so big?</h3>
@@ -196,7 +196,7 @@ const PdfCompress: React.FC = () => {
         <div className="space-y-4">
           <div>
              <h5 className="font-bold text-gray-900">Is it safe to upload confidential documents?</h5>
-             <p>Yes. FileMakerOn uses <strong>Client-Side Processing</strong>. The compression happens inside your web browser. Your PDF file is never sent to our server, so it is physically impossible for us to read your data.</p>
+             <p>Yes. FileMaker uses <strong>Client-Side Processing</strong>. The compression happens inside your web browser. Your PDF file is never sent to our server, so it is physically impossible for us to read your data.</p>
           </div>
           <div>
              <h5 className="font-bold text-gray-900">Will my document look blurry?</h5>

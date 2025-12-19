@@ -291,7 +291,7 @@ const AgeCalculator: React.FC = () => {
         <p className="lead text-xl text-gray-500 mb-8">
           Have you ever wondered exactly how many seconds you've been alive? Or wanted to know the exact day of the week your next milestone birthday falls on? 
           While asking "how old are you?" usually yields a simple answer in years, the mathematics of time is far more fascinating. 
-          FileMakerOn's <strong>Advanced Age Calculator</strong> goes beyond the basics to provide a comprehensive analysis of your chronological timeline.
+          FileMaker's <strong>Advanced Age Calculator</strong> goes beyond the basics to provide a comprehensive analysis of your chronological timeline.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 my-10">
@@ -351,7 +351,7 @@ const AgeCalculator: React.FC = () => {
 
         <div className="mt-8 pt-8 border-t border-gray-100">
            <p className="text-center font-bold text-gray-800">
-              Ready to find out your stats? Scroll up and enter your Date of Birth now!
+              Ready to find out your stats? Scroll up and enter your Date of Birth on the left!
            </p>
         </div>
       </article>

@@ -104,7 +104,7 @@ const AiTool: React.FC = () => {
         
         <p>
           Accessibility and SEO go hand-in-hand. Search engines cannot "see" images in the same way humans do; they rely on text descriptions to understand what an image is about. 
-          FileMakerOn's <strong>AI Image Describer</strong> uses Google's advanced Gemini 2.5 AI model to analyze your photos and generate accurate, descriptive text automatically.
+          FileMaker's <strong>AI Image Describer</strong> uses Google's advanced Gemini 2.5 AI model to analyze your photos and generate accurate, descriptive text automatically.
         </p>
 
         <h3 className="text-2xl font-bold text-gray-900 mt-8 mb-4">What is Alt Text and Why Does it Matter?</h3>

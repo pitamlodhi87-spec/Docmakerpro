@@ -63,7 +63,7 @@ const ImageConverter: React.FC<ConverterProps> = ({ targetFormat, title, descrip
       const link = document.createElement('a');
       link.href = processedImage;
       const ext = getExtension(targetFormat);
-      link.download = `${fileName}-FileMakerOn.${ext}`;
+      link.download = `${fileName}-FileMaker.${ext}`;
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
@@ -72,18 +72,18 @@ const ImageConverter: React.FC<ConverterProps> = ({ targetFormat, title, descrip
 
   return (
     <div className="max-w-4xl mx-auto space-y-8">
-      <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
-        <div className="border-b border-gray-100 pb-6 mb-6">
-          <h1 className="text-3xl font-bold text-gray-900 mb-2">{title}</h1>
-          <p className="text-gray-500">{description}</p>
+      <div className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-sm border border-gray-100 dark:border-gray-700">
+        <div className="border-b border-gray-100 dark:border-gray-700 pb-6 mb-6">
+          <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">{title}</h1>
+          <p className="text-gray-500 dark:text-gray-400">{description}</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Upload Section */}
           <div className="space-y-4">
-             <label className="block text-sm font-medium text-gray-700">Upload Image</label>
+             <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">Upload Image</label>
             <div 
-              className="border-2 border-dashed border-gray-300 rounded-xl p-8 flex flex-col items-center justify-center text-center cursor-pointer hover:bg-gray-50 hover:border-chrome-blue transition-colors h-64"
+              className="border-2 border-dashed border-gray-300 dark:border-gray-600 rounded-xl p-8 flex flex-col items-center justify-center text-center cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-700 hover:border-chrome-blue transition-colors h-64"
               onClick={() => fileInputRef.current?.click()}
             >
               <input 
@@ -93,21 +93,21 @@ const ImageConverter: React.FC<ConverterProps> = ({ targetFormat, title, descrip
                 className="hidden" 
                 onChange={handleFileChange}
               />
-              <div className="bg-blue-50 p-4 rounded-full mb-4">
-                <Upload className="text-chrome-blue" size={32} />
+              <div className="bg-blue-50 dark:bg-gray-700 p-4 rounded-full mb-4">
+                <Upload className="text-chrome-blue dark:text-blue-400" size={32} />
               </div>
-              <p className="text-gray-900 font-medium">Click to upload</p>
-              <p className="text-gray-500 text-sm mt-1">PNG, JPG, WEBP, GIF, BMP</p>
+              <p className="text-gray-900 dark:text-white font-medium">Click to upload</p>
+              <p className="text-gray-500 dark:text-gray-400 text-sm mt-1">PNG, JPG, WEBP, GIF, BMP</p>
             </div>
             {srcImage && (
-              <p className="text-center text-sm text-gray-500">Original Size: <span className="font-semibold text-gray-900">{formatFileSize(srcSize)}</span></p>
+              <p className="text-center text-sm text-gray-500 dark:text-gray-400">Original Size: <span className="font-semibold text-gray-900 dark:text-white">{formatFileSize(srcSize)}</span></p>
             )}
           </div>
 
           {/* Preview & Action Section */}
           <div className="space-y-4">
-            <label className="block text-sm font-medium text-gray-700">Converted Preview</label>
-            <div className="bg-gray-100 rounded-xl h-64 flex items-center justify-center overflow-hidden relative border border-gray-200">
+            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">Converted Preview</label>
+            <div className="bg-gray-100 dark:bg-gray-900 rounded-xl h-64 flex items-center justify-center overflow-hidden relative border border-gray-200 dark:border-gray-700">
               {processedImage ? (
                 <img 
                   src={processedImage} 
@@ -129,7 +129,7 @@ const ImageConverter: React.FC<ConverterProps> = ({ targetFormat, title, descrip
             </div>
 
              {processedImage && (
-              <p className="text-center text-sm text-gray-500">Output Size: <span className="font-semibold text-green-600">{formatFileSize(outSize)}</span></p>
+              <p className="text-center text-sm text-gray-500 dark:text-gray-400">Output Size: <span className="font-semibold text-green-600 dark:text-green-400">{formatFileSize(outSize)}</span></p>
             )}
 
             <button
@@ -148,16 +148,16 @@ const ImageConverter: React.FC<ConverterProps> = ({ targetFormat, title, descrip
       <AdBanner />
 
       {/* SEO Article & FAQ */}
-      <article className="bg-white rounded-2xl p-8 md:p-12 shadow-sm border border-gray-100 prose prose-lg max-w-none text-gray-600">
-        <h2 className="text-3xl font-bold text-gray-900 mb-6">Convert Images to {formatName} Online for Free</h2>
+      <article className="bg-white dark:bg-gray-800 rounded-2xl p-8 md:p-12 shadow-sm border border-gray-100 dark:border-gray-700 prose prose-lg dark:prose-invert max-w-none text-gray-600 dark:text-gray-300">
+        <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">Convert Images to {formatName} Online for Free</h2>
         
         <p>
-          Need to convert your photos to {formatName} format? FileMakerOn provides the fastest and most secure way to change image formats directly in your web browser. 
+          Need to convert your photos to {formatName} format? FileMaker provides the fastest and most secure way to change image formats directly in your web browser. 
           Whether you are a web developer looking to optimize site speed with WebP, a designer needing a transparent PNG, or just someone archiving photos as JPG, 
           our tool handles it all.
         </p>
 
-        <h3 className="text-2xl font-bold text-gray-900 mt-8 mb-4">Why Convert to {formatName}?</h3>
+        <h3 className="text-2xl font-bold text-gray-900 dark:text-white mt-8 mb-4">Why Convert to {formatName}?</h3>
         <p>
           Different image formats serve different purposes on the web and in print:
         </p>
@@ -180,7 +180,7 @@ const ImageConverter: React.FC<ConverterProps> = ({ targetFormat, title, descrip
           <li><strong>Efficiency:</strong> Our converter ensures the file structure is optimized without unnecessary metadata.</li>
         </ul>
 
-        <h3 className="text-2xl font-bold text-gray-900 mt-8 mb-4">How to Use the {formatName} Converter</h3>
+        <h3 className="text-2xl font-bold text-gray-900 dark:text-white mt-8 mb-4">How to Use the {formatName} Converter</h3>
         <ol className="list-decimal pl-6 space-y-2">
            <li>Click the <strong>Upload Image</strong> box or drag and drop your file.</li>
            <li>The tool supports input formats like JPG, PNG, WebP, BMP, and GIF.</li>
@@ -188,19 +188,19 @@ const ImageConverter: React.FC<ConverterProps> = ({ targetFormat, title, descrip
            <li>Preview your new {formatName} image and click <strong>Download</strong> to save it to your device.</li>
         </ol>
 
-        <h3 className="text-2xl font-bold text-gray-900 mt-8 mb-4">Frequently Asked Questions (FAQ)</h3>
+        <h3 className="text-2xl font-bold text-gray-900 dark:text-white mt-8 mb-4">Frequently Asked Questions (FAQ)</h3>
         
         <div className="space-y-4">
           <div>
-             <h5 className="font-bold text-gray-900">Is this converter free?</h5>
-             <p>Yes, FileMakerOn is completely free to use. There are no limits on the number of files you can convert.</p>
+             <h5 className="font-bold text-gray-900 dark:text-white">Is this converter free?</h5>
+             <p>Yes, FileMaker is completely free to use. There are no limits on the number of files you can convert.</p>
           </div>
           <div>
-             <h5 className="font-bold text-gray-900">Is it safe to upload my personal photos?</h5>
+             <h5 className="font-bold text-gray-900 dark:text-white">Is it safe to upload my personal photos?</h5>
              <p>Absolutely. We use <strong>Client-Side Technology</strong>, which means your images are processed by your browser on your own computer. They are never uploaded to our servers.</p>
           </div>
           <div>
-             <h5 className="font-bold text-gray-900">Does converting to {formatName} reduce quality?</h5>
+             <h5 className="font-bold text-gray-900 dark:text-white">Does converting to {formatName} reduce quality?</h5>
              <p>It depends on the format. Converting to lossless formats like PNG preserves all detail. Converting to compressed formats like JPG or WebP may slightly reduce quality to save file size, but usually, it is not noticeable to the human eye.</p>
           </div>
         </div>

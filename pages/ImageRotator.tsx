@@ -113,7 +113,7 @@ const ImageRotator: React.FC = () => {
         
         <p>
           We've all been there: you upload a photo from your phone to your computer, and it's sideways. Or maybe you took a selfie that's mirrored, and you need to flip it back. 
-          FileMakerOn's <strong>Image Rotator</strong> is the simplest way to correct orientation issues without opening Photoshop.
+          FileMaker's <strong>Image Rotator</strong> is the simplest way to correct orientation issues without opening Photoshop.
         </p>
 
         <h3 className="text-2xl font-bold text-gray-900 mt-8 mb-4">Understanding Image Orientation</h3>

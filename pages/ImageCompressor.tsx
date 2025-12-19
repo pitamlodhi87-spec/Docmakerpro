@@ -127,7 +127,7 @@ const ImageCompressor: React.FC = () => {
     if (compressedImage) {
       const link = document.createElement('a');
       link.href = compressedImage;
-      link.download = `compressed-filemakeron-${enableResizing ? `${width}x${height}-` : ''}${targetSizeValue ? 'auto' : Math.round(quality*100)}.jpg`;
+      link.download = `compressed-filemaker-${enableResizing ? `${width}x${height}-` : ''}${targetSizeValue ? 'auto' : Math.round(quality*100)}.jpg`;
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
@@ -361,7 +361,7 @@ const ImageCompressor: React.FC = () => {
         
         <p>
           Managing image files often involves two steps: resizing dimensions and compressing file size. 
-          FileMakerOn's <strong>Image Compressor & Resizer</strong> combines these into a single, powerful tool. 
+          FileMaker's <strong>Image Compressor & Resizer</strong> combines these into a single, powerful tool. 
           Whether you need a 1200px wide image for a blog post or a sub-100KB file for an email attachment, you can do it all here.
         </p>
 

@@ -179,7 +179,7 @@ const ImageSizeIncreaser: React.FC = () => {
         <h2 className="text-3xl font-bold text-gray-900 mb-6">How to Increase Image File Size in KB or MB</h2>
         <p>
            While most people want to compress images to save space, there are specific situations where you need to <strong>increase</strong> the file size of a JPG or PNG. 
-           FileMakerOn's Size Increaser tool makes this easy, safe, and free.
+           FileMaker's Size Increaser tool makes this easy, safe, and free.
         </p>
 
         <h3 className="text-2xl font-bold text-gray-900 mt-8 mb-4">Why Would I Need to Increase File Size?</h3>

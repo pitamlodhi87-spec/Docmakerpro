@@ -52,7 +52,7 @@ const PdfMerge: React.FC = () => {
     if (downloadUrl) {
       const link = document.createElement('a');
       link.href = downloadUrl;
-      link.download = "merged-filemakeron.pdf";
+      link.download = "merged-filemaker.pdf";
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
@@ -165,7 +165,7 @@ const PdfMerge: React.FC = () => {
         <h2 className="text-3xl font-bold text-gray-900 mb-6">The Easiest Way to Combine PDF Files</h2>
         <p>
            Merging PDF files is one of the most common document tasks. Whether you are a student combining assignment chapters, 
-           a lawyer organizing case files, or a business professional merging monthly reports, FileMakerOn's <strong>PDF Merger</strong> makes it simple.
+           a lawyer organizing case files, or a business professional merging monthly reports, FileMaker's <strong>PDF Merger</strong> makes it simple.
         </p>
 
         <h3 className="text-2xl font-bold text-gray-900 mt-8 mb-4">Why Merge PDFs?</h3>
@@ -187,7 +187,7 @@ const PdfMerge: React.FC = () => {
         <div className="space-y-4">
           <div>
              <h5 className="font-bold text-gray-900">Is there a limit to how many files I can merge?</h5>
-             <p>FileMakerOn allows you to merge as many files as your computer's memory can handle. For most users, merging 20-30 files at once works perfectly.</p>
+             <p>FileMaker allows you to merge as many files as your computer's memory can handle. For most users, merging 20-30 files at once works perfectly.</p>
           </div>
           <div>
              <h5 className="font-bold text-gray-900">Does it work on Mac and Windows?</h5>

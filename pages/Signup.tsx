@@ -37,7 +37,7 @@ const Signup: React.FC = () => {
            <UserPlus size={24} />
         </div>
         <h1 className="text-2xl font-bold text-gray-900">Create Account</h1>
-        <p className="text-gray-500">Join FileMakerOn today</p>
+        <p className="text-gray-500">Join FileMaker today</p>
       </div>
 
       {error && <div className="bg-red-50 text-red-600 p-3 rounded-lg mb-4 text-sm font-medium">{error}</div>}

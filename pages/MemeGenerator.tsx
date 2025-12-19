@@ -37,7 +37,7 @@ const MemeGenerator: React.FC = () => {
     if (memeImage) {
       const link = document.createElement('a');
       link.href = memeImage;
-      link.download = `meme-filemakeron.png`;
+      link.download = `meme-filemaker.png`;
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
@@ -177,10 +177,10 @@ const MemeGenerator: React.FC = () => {
         <p className="lead">
           In the digital age, memes have become the universal language of the internet. From social media feeds to corporate marketing campaigns, 
           these bite-sized pieces of visual humor convey complex emotions, cultural references, and trending topics instantly. 
-          FileMakerOn's <strong>Online Meme Generator</strong> is designed to empower you to create high-quality, professional memes in seconds without installing any heavy software.
+          FileMaker's <strong>Online Meme Generator</strong> is designed to empower you to create high-quality, professional memes in seconds without installing any heavy software.
         </p>
 
-        <h3 className="text-2xl font-bold text-gray-900 mt-8 mb-4">Why Use FileMakerOn's Meme Generator?</h3>
+        <h3 className="text-2xl font-bold text-gray-900 mt-8 mb-4">Why Use FileMaker's Meme Generator?</h3>
         <p>
           While there are countless apps available, our web-based tool offers distinct advantages for creators, marketers, and casual users alike:
         </p>
@@ -222,7 +222,7 @@ const MemeGenerator: React.FC = () => {
         <div className="space-y-4">
           <div>
             <h5 className="font-bold text-gray-900">Is this tool free?</h5>
-            <p>Yes, FileMakerOn is 100% free to use for unlimited memes.</p>
+            <p>Yes, FileMaker is 100% free to use for unlimited memes.</p>
           </div>
           <div>
             <h5 className="font-bold text-gray-900">Do you support other languages?</h5>

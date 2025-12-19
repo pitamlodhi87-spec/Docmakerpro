@@ -77,7 +77,7 @@ const UniversalConverter: React.FC = () => {
       const link = document.createElement('a');
       link.href = processedImage;
       const ext = targetFormat.split('/')[1].replace('svg+xml', 'svg');
-      link.download = `converted-filemakeron.${ext}`;
+      link.download = `converted-filemaker.${ext}`;
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
@@ -220,7 +220,7 @@ const UniversalConverter: React.FC = () => {
       <article className="bg-white rounded-2xl p-8 md:p-12 shadow-sm border border-gray-100 prose prose-lg max-w-none text-gray-600">
         <h2 className="text-3xl font-bold text-gray-900 mb-6">Convert Any Image File Format Online</h2>
         <p>
-           The <strong>Universal Image Converter</strong> by FileMakerOn is your Swiss Army knife for digital images. 
+           The <strong>Universal Image Converter</strong> by FileMaker is your Swiss Army knife for digital images. 
            In the past, you might have needed separate tools to convert PNG to JPG, then another to resize it to 500KB. 
            We have combined everything into one smart interface.
         </p>

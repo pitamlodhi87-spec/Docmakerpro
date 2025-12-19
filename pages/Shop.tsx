@@ -37,7 +37,7 @@ const Shop: React.FC = () => {
 
     // 1. UPI Intent Flow (Simulated)
     const upiId = "merchant@upi"; 
-    const upiLink = `upi://pay?pa=${upiId}&pn=FileMakerOn&am=${price}&cu=INR`;
+    const upiLink = `upi://pay?pa=${upiId}&pn=FileMaker&am=${price}&cu=INR`;
     
     // In a real mobile app, we would do: window.location.href = upiLink;
     // For this web simulation, we confirm and call backend.

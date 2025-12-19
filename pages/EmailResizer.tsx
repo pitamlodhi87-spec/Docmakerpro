@@ -129,7 +129,7 @@ const EmailResizer: React.FC = () => {
         
         <p>
           Your email signature is often the first and last thing a professional contact sees. A blurry, stretched, or overly large logo can damage your credibility. 
-          FileMakerOn's <strong>Email Resizer</strong> helps you format your headshots and company logos perfectly for Gmail, Outlook, Apple Mail, and social platforms.
+          FileMaker's <strong>Email Resizer</strong> helps you format your headshots and company logos perfectly for Gmail, Outlook, Apple Mail, and social platforms.
         </p>
 
         <h3 className="text-2xl font-bold text-gray-900 mt-8 mb-4">Why Do Images Look Blurry in Emails?</h3>

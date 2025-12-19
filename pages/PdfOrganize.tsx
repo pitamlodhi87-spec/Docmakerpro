@@ -1,7 +1,6 @@
-
-import React, { useState, useRef, useEffect } from 'react';
-import { Upload, RotateCw, Trash2, GripHorizontal, FileOutput, ArrowDown, Save, CheckCircle, Download, RefreshCw } from 'lucide-react';
-import { getAllPdfPagesAsImages, organizePdf, downloadPdf } from '../services/pdfUtils';
+import React, { useState, useRef } from 'react';
+import { Upload, RotateCw, Trash2, GripHorizontal, Save, CheckCircle, Download, RefreshCw, ArrowLeft, ArrowRight } from 'lucide-react';
+import { getAllPdfPagesAsImages, organizePdf } from '../services/pdfUtils';
 import { PdfPageData } from '../types';
 import { AdBanner } from '../components/Layout';
 import { RelatedTools } from '../components/RelatedTools';
@@ -91,7 +90,8 @@ const PdfOrganize: React.FC = () => {
                disabled={isProcessing}
                className="bg-chrome-blue text-white px-6 py-3 rounded-xl font-bold shadow-lg hover:bg-blue-700 transition-colors flex items-center gap-2"
              >
-                <Save size={20} /> Save & Process
+                {isProcessing ? <RefreshCw className="animate-spin" size={20} /> : <Save size={20} />}
+                {isProcessing ? 'Processing...' : 'Save & Process'}
              </button>
            )}
         </div>
@@ -155,26 +155,27 @@ const PdfOrganize: React.FC = () => {
                       <button onClick={() => deletePage(idx)} className="p-1.5 bg-white border border-gray-200 rounded hover:text-red-500 transition-colors" title="Delete Page">
                          <Trash2 size={14} />
                       </button>
-                      {idx > 0 && (
-                        <button onClick={() => movePage(idx, 'left')} className="p-1.5 bg-white border border-gray-200 rounded hover:bg-gray-100 transition-colors" title="Move Left">
-                          ←
-                        </button>
-                      )}
-                      {idx < pages.length - 1 && (
-                        <button onClick={() => movePage(idx, 'right')} className="p-1.5 bg-white border border-gray-200 rounded hover:bg-gray-100 transition-colors" title="Move Right">
-                          →
-                        </button>
-                      )}
+                   </div>
+                   <div className="flex justify-center gap-2 mt-2">
+                      <button 
+                        onClick={() => movePage(idx, 'left')} 
+                        disabled={idx === 0}
+                        className="p-1.5 bg-white border border-gray-200 rounded hover:bg-gray-100 disabled:opacity-30 disabled:cursor-default transition-colors"
+                        title="Move Left"
+                      >
+                         <ArrowLeft size={14} />
+                      </button>
+                      <button 
+                        onClick={() => movePage(idx, 'right')} 
+                        disabled={idx === pages.length - 1}
+                        className="p-1.5 bg-white border border-gray-200 rounded hover:bg-gray-100 disabled:opacity-30 disabled:cursor-default transition-colors"
+                        title="Move Right"
+                      >
+                         <ArrowRight size={14} />
+                      </button>
                    </div>
                 </div>
               ))}
-              
-              {pages.length === 0 && isProcessing && (
-                 <div className="col-span-full py-12 text-center text-gray-500">
-                    <div className="animate-spin h-8 w-8 border-4 border-indigo-500 border-t-transparent rounded-full mx-auto mb-4"></div>
-                    Processing Pages...
-                 </div>
-              )}
            </div>
         )}
       </div>
@@ -182,38 +183,27 @@ const PdfOrganize: React.FC = () => {
       <AdBanner />
 
       <article className="bg-white rounded-2xl p-8 md:p-12 shadow-sm border border-gray-100 prose prose-lg max-w-none text-gray-600">
-        <h2 className="text-3xl font-bold text-gray-900 mb-6">Rearrange, Rotate, and Delete PDF Pages</h2>
+        <h2 className="text-3xl font-bold text-gray-900 mb-6">Free Online PDF Organizer and Editor</h2>
         <p>
-           Have a PDF with pages in the wrong order? Or maybe a scanned document where one page is upside down? 
-           FileMakerOn's <strong>Organize PDF</strong> tool gives you total control over your document structure with a visual, drag-and-drop interface.
+           Have you ever scanned a document upside down? Or needed to extract just a few pages from a large contract? 
+           FileMaker's <strong>PDF Organizer</strong> gives you complete control over your PDF files without expensive software like Adobe Acrobat Pro.
         </p>
 
         <h3 className="text-2xl font-bold text-gray-900 mt-8 mb-4">Features</h3>
         <ul className="list-disc pl-6 space-y-2">
-           <li><strong>Reorder Pages:</strong> Use the arrow buttons to move pages forward or backward in the document sequence.</li>
-           <li><strong>Rotate Pages:</strong> Fix orientation issues by rotating individual pages 90 degrees at a time.</li>
-           <li><strong>Remove Pages:</strong> Delete unnecessary pages (like blank sheets from a scanner) to clean up your PDF.</li>
-           <li><strong>Visual Preview:</strong> See exactly what you are doing with thumbnail previews of every page.</li>
+           <li><strong>Rotate Pages:</strong> Fix orientation issues by rotating individual pages 90, 180, or 270 degrees.</li>
+           <li><strong>Delete Pages:</strong> Remove unnecessary or blank pages to clean up your document.</li>
+           <li><strong>Reorder Pages:</strong> Simply click arrows to move pages to the correct position.</li>
+           <li><strong>Secure Processing:</strong> All edits happen in your browser. No files are uploaded to any server.</li>
         </ul>
 
-        <h3 className="text-2xl font-bold text-gray-900 mt-8 mb-4">How to Split a PDF</h3>
-        <p>
-           You can also use this tool to "split" a PDF. Simply delete the pages you don't want, and save the remaining pages as a new file. 
-           To extract the other half, just upload the original file again and delete the opposite set of pages!
-        </p>
-
-        <h3 className="text-2xl font-bold text-gray-900 mt-8 mb-4">Frequently Asked Questions (FAQ)</h3>
-        
-        <div className="space-y-4">
-          <div>
-             <h5 className="font-bold text-gray-900">Can I rotate just one page?</h5>
-             <p>Yes! Unlike some tools that rotate the whole document, FileMakerOn lets you correct specific pages that were scanned incorrectly.</p>
-          </div>
-          <div>
-             <h5 className="font-bold text-gray-900">Does this lower the quality of my PDF?</h5>
-             <p>No. Rearranging, rotating, and deleting pages are "lossless" operations. The content of the pages remains exactly as crisp as the original.</p>
-          </div>
-        </div>
+        <h3 className="text-2xl font-bold text-gray-900 mt-8 mb-4">How to Use</h3>
+        <ol className="list-decimal pl-6 space-y-2">
+           <li>Upload your PDF file.</li>
+           <li>You will see thumbnail previews of all pages.</li>
+           <li>Use the tool icons below each page to Rotate, Delete, or Move.</li>
+           <li>When you are happy with the layout, click <strong>Save & Process</strong> to download your new PDF.</li>
+        </ol>
       </article>
 
       <RelatedTools />

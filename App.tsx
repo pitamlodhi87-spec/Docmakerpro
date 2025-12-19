@@ -19,6 +19,8 @@ import PdfCompress from './pages/PdfCompress';
 import PdfOrganize from './pages/PdfOrganize';
 import PdfToImage from './pages/PdfToImage';
 import Chrome from './pages/Chrome';
+import ImageCropper from './pages/ImageCropper';
+import RemoveBg from './pages/RemoveBg';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import AdminDashboard from './pages/AdminDashboard';
@@ -37,13 +39,29 @@ function App() {
           
           <Route path="/universal-converter" element={<UniversalConverter />} />
           <Route path="/size-increaser" element={<ImageSizeIncreaser />} />
+          
+          {/* New Tools */}
+          <Route path="/cropper" element={<ImageCropper />} />
+          <Route path="/remove-bg" element={<RemoveBg />} />
+
+          {/* Converters */}
           <Route 
             path="/img-to-png" 
             element={
               <ImageConverter 
                 targetFormat={ImageFormat.PNG} 
-                title="JPG to PNG Converter"
+                title="JPG/WEBP to PNG Converter"
                 description="Convert JPG, GIF, and WebP to transparent PNG format instantly."
+              />
+            } 
+          />
+          <Route 
+            path="/jpeg-to-png" 
+            element={
+              <ImageConverter 
+                targetFormat={ImageFormat.PNG} 
+                title="JPEG to PNG Converter"
+                description="Convert standard JPEG images to PNG format."
               />
             } 
           />
@@ -64,6 +82,26 @@ function App() {
                 targetFormat={ImageFormat.JPEG} 
                 title="Image to JPEG Converter"
                 description="Convert any image format to standard JPEG format."
+              />
+            } 
+          />
+          <Route 
+            path="/svg-to-img" 
+            element={
+              <ImageConverter 
+                targetFormat={ImageFormat.PNG} 
+                title="SVG to PNG/JPG Converter"
+                description="Convert Vector SVG files to raster PNG images."
+              />
+            } 
+          />
+          <Route 
+            path="/webp-to-img" 
+            element={
+              <ImageConverter 
+                targetFormat={ImageFormat.JPEG} 
+                title="WebP to JPG/PNG Converter"
+                description="Convert modern WebP images to standard JPG format."
               />
             } 
           />
@@ -117,7 +155,7 @@ function App() {
           <Route path="/age-calculator" element={<AgeCalculator />} />
           <Route path="/ai-tool" element={<AiTool />} />
 
-          {/* New PDF Routes */}
+          {/* PDF Routes */}
           <Route path="/pdf-merge" element={<PdfMerge />} />
           <Route path="/pdf-compress" element={<PdfCompress />} />
           <Route path="/pdf-organize" element={<PdfOrganize />} />
