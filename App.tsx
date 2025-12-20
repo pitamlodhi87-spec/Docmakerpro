@@ -10,7 +10,6 @@ import ImageCompressor from './pages/ImageCompressor';
 import ImageRotator from './pages/ImageRotator';
 import MemeGenerator from './pages/MemeGenerator';
 import EmailResizer from './pages/EmailResizer';
-import AiTool from './pages/AiTool';
 import AgeCalculator from './pages/AgeCalculator';
 import UniversalConverter from './pages/UniversalConverter';
 import ImageSizeIncreaser from './pages/ImageSizeIncreaser';
@@ -21,6 +20,12 @@ import PdfToImage from './pages/PdfToImage';
 import Chrome from './pages/Chrome';
 import ImageCropper from './pages/ImageCropper';
 import RemoveBg from './pages/RemoveBg';
+import QrGenerator from './pages/QrGenerator';
+import LinkShortener from './pages/LinkShortener';
+import PasswordGenerator from './pages/PasswordGenerator';
+import Stopwatch from './pages/Stopwatch';
+import RandomPicker from './pages/RandomPicker';
+import ColorPickerTool from './pages/ColorPickerTool';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import AdminDashboard from './pages/AdminDashboard';
@@ -43,6 +48,12 @@ function App() {
           {/* New Tools */}
           <Route path="/cropper" element={<ImageCropper />} />
           <Route path="/remove-bg" element={<RemoveBg />} />
+          <Route path="/qr-generator" element={<QrGenerator />} />
+          <Route path="/link-shortener" element={<LinkShortener />} />
+          <Route path="/password-generator" element={<PasswordGenerator />} />
+          <Route path="/stopwatch" element={<Stopwatch />} />
+          <Route path="/random-picker" element={<RandomPicker />} />
+          <Route path="/color-picker" element={<ColorPickerTool />} />
 
           {/* Converters */}
           <Route 
@@ -153,7 +164,6 @@ function App() {
           <Route path="/meme-gen" element={<MemeGenerator />} />
           <Route path="/email-resizer" element={<EmailResizer />} />
           <Route path="/age-calculator" element={<AgeCalculator />} />
-          <Route path="/ai-tool" element={<AiTool />} />
 
           {/* PDF Routes */}
           <Route path="/pdf-merge" element={<PdfMerge />} />

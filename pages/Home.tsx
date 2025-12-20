@@ -2,9 +2,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { 
-  ImageIcon, FileImage, Scaling, BrainCircuit, FileText, Minimize2, 
+  ImageIcon, FileImage, Scaling, FileText, Minimize2, 
   RotateCw, Smile, Mail, Calculator, FileType, Code, ArrowRightLeft, Maximize,
-  Merge, GripHorizontal, FileOutput, Chrome, Crop, Eraser
+  Merge, GripHorizontal, FileOutput, Chrome, Crop, Eraser, QrCode, Link as LinkIcon, Lock, Timer, Dices, Palette
 } from 'lucide-react';
 import { Tool } from '../types';
 
@@ -199,6 +199,30 @@ const pdfTools: Tool[] = [
 // Category 4: Creative & Other
 const utilityTools: Tool[] = [
   {
+    id: 'qr',
+    name: 'QR Code Generator',
+    description: 'Create custom QR codes for URLs and text.',
+    icon: QrCode,
+    path: '/qr-generator',
+    color: 'text-gray-800',
+  },
+  {
+    id: 'password',
+    name: 'Password Generator',
+    description: 'Create secure, random passwords instantly.',
+    icon: Lock,
+    path: '/password-generator',
+    color: 'text-emerald-600',
+  },
+  {
+    id: 'link',
+    name: 'Short Link Generator',
+    description: 'Shorten long URLs for easy sharing.',
+    icon: LinkIcon,
+    path: '/link-shortener',
+    color: 'text-blue-500',
+  },
+  {
     id: 'meme',
     name: 'Meme Generator',
     description: 'Add classic top and bottom text to images.',
@@ -223,20 +247,36 @@ const utilityTools: Tool[] = [
     color: 'text-purple-500',
   },
   {
+    id: 'stopwatch',
+    name: 'Stopwatch & Timer',
+    description: 'Online countdown timer and stopwatch.',
+    icon: Timer,
+    path: '/stopwatch',
+    color: 'text-orange-500',
+  },
+  {
+    id: 'picker',
+    name: 'Random Name Picker',
+    description: 'Spin the wheel for giveaways and contests.',
+    icon: Dices,
+    path: '/random-picker',
+    color: 'text-indigo-500',
+  },
+  {
+    id: 'color',
+    name: 'Color Picker',
+    description: 'Get HEX, RGB, and HSL color codes.',
+    icon: Palette,
+    path: '/color-picker',
+    color: 'text-cyan-500',
+  },
+  {
     id: 'chrome',
     name: 'Chrome Tools',
     description: 'Essential utilities: The Adder and Converter.',
     icon: Chrome,
     path: '/chrome',
-    color: 'text-blue-500',
-  },
-  {
-    id: 'ai-tool',
-    name: 'AI Image Analysis',
-    description: 'Generate alt text and descriptions using AI.',
-    icon: BrainCircuit,
-    path: '/ai-tool',
-    color: 'text-purple-600',
+    color: 'text-blue-600',
   },
 ];
 

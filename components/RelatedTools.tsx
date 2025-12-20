@@ -2,7 +2,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { 
-  ImageIcon, FileImage, Scaling, BrainCircuit, FileText, 
+  ImageIcon, FileImage, Scaling, FileText, 
   Minimize2, RotateCw, Smile, Mail, Calculator, FileType, Maximize
 } from 'lucide-react';
 
@@ -15,7 +15,6 @@ const relatedTools = [
   { name: 'Resizer', path: '/resizer', icon: Scaling, color: 'text-indigo-600' },
   { name: 'Meme Maker', path: '/meme-gen', icon: Smile, color: 'text-pink-600' },
   { name: 'Age Calc', path: '/age-calculator', icon: Calculator, color: 'text-teal-600' },
-  { name: 'AI Analyze', path: '/ai-tool', icon: BrainCircuit, color: 'text-violet-600' },
 ];
 
 export const RelatedTools: React.FC = () => {

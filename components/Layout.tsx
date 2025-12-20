@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { Menu, X, Shield, Info, Mail, ChevronDown, FileText, Globe, User, Moon, Sun } from 'lucide-react';
+import { Menu, X, Shield, Info, Mail, ChevronDown, FileText, Globe, User, Moon, Sun, MessageCircle, Send } from 'lucide-react';
 
 // Tool links definition used in Header and Footer
 const toolLinks = [
@@ -24,7 +24,6 @@ const toolLinks = [
   { name: 'Rotator', path: '/rotator' },
   { name: 'Meme Gen', path: '/meme-gen' },
   { name: 'Age Calculator', path: '/age-calculator' },
-  { name: 'AI Analyze', path: '/ai-tool' },
   { name: 'Chrome Tools', path: '/chrome' },
 ];
 
@@ -167,10 +166,10 @@ const Header: React.FC = () => {
       {/* Mobile Menu */}
       <div 
         className={`md:hidden bg-white dark:bg-gray-900 border-t border-gray-100 dark:border-gray-800 absolute w-full left-0 shadow-lg transition-all duration-300 ease-in-out z-40 overflow-hidden ${
-          isOpen ? 'max-h-[80vh] opacity-100' : 'max-h-0 opacity-0'
+          isOpen ? 'max-h-[85vh] opacity-100' : 'max-h-0 opacity-0'
         }`}
       >
-        <div className="px-4 py-3 space-y-1 overflow-y-auto max-h-[80vh]">
+        <div className="px-4 py-3 space-y-1 overflow-y-auto max-h-[85vh]">
           <Link 
             to="/" 
             onClick={() => setIsOpen(false)} 
@@ -208,8 +207,20 @@ const Header: React.FC = () => {
             ))}
           </div>
 
+          <div className="px-3 py-4 border-t border-gray-100 dark:border-gray-800 mt-2">
+             <p className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-3">Join Community</p>
+             <div className="grid grid-cols-2 gap-2">
+                <a href="https://whatsapp.com/channel/0029VbCBS0T1SWt60kriuL0f" target="_blank" rel="noreferrer" className="flex items-center justify-center px-3 py-2 text-sm font-bold text-green-700 bg-green-100 dark:bg-green-900/30 dark:text-green-400 rounded-lg hover:bg-green-200 dark:hover:bg-green-900/50 transition-colors">
+                    <MessageCircle size={16} className="mr-2" /> WhatsApp
+                </a>
+                <a href="https://t.me/filemakerfreel" target="_blank" rel="noreferrer" className="flex items-center justify-center px-3 py-2 text-sm font-bold text-blue-700 bg-blue-100 dark:bg-blue-900/30 dark:text-blue-400 rounded-lg hover:bg-blue-200 dark:hover:bg-blue-900/50 transition-colors">
+                    <Send size={16} className="mr-2" /> Telegram
+                </a>
+             </div>
+          </div>
+
           {/* Mobile Auth Buttons */}
-          <div className="p-3 border-t border-gray-100 dark:border-gray-800 mt-2 space-y-2">
+          <div className="p-3 border-t border-gray-100 dark:border-gray-800 space-y-2">
              {userName ? (
                 <>
                     <div className="px-3 py-2 font-bold text-gray-800 dark:text-white">Hi, {userName}</div>
@@ -324,9 +335,23 @@ const Footer: React.FC = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
           <div>
             <h3 className="text-lg font-semibold mb-4 text-white">About</h3>
-            <p className="text-gray-400 text-sm mb-4">
+            <p className="text-gray-400 text-sm mb-6">
               FileMaker provides free, secure, client-side tools for all your file needs. No uploads, no waiting.
             </p>
+            <div className="flex flex-col gap-2">
+                <a href="https://whatsapp.com/channel/0029VbCBS0T1SWt60kriuL0f" target="_blank" rel="noreferrer" className="flex items-center gap-3 text-gray-400 hover:text-green-400 transition-colors group">
+                    <div className="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center group-hover:bg-green-900/30 transition-colors">
+                        <MessageCircle size={16} />
+                    </div>
+                    <span className="text-sm">Join WhatsApp Channel</span>
+                </a>
+                <a href="https://t.me/filemakerfreel" target="_blank" rel="noreferrer" className="flex items-center gap-3 text-gray-400 hover:text-blue-400 transition-colors group">
+                    <div className="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center group-hover:bg-blue-900/30 transition-colors">
+                        <Send size={16} />
+                    </div>
+                    <span className="text-sm">Join Telegram Group</span>
+                </a>
+            </div>
           </div>
           <div>
             <h3 className="text-lg font-semibold mb-4 text-white">Quick Links</h3>
