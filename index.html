@@ -9,11 +9,13 @@
     <meta name="theme-color" content="#2563EB" />
     <link rel="canonical" href="https://filemaker.com/" />
     
-    <!-- HTTPS Enforcement Script -->
+    <!-- HTTPS Enforcement & Process Polyfill -->
     <script>
       if (window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1' && window.location.protocol === 'http:') {
         window.location.href = window.location.href.replace('http:', 'https:');
       }
+      // Polyfill process for browser environment to prevent 'process is not defined' crash
+      window.process = { env: { API_KEY: '' } };
     </script>
 
     <script src="https://cdn.tailwindcss.com"></script>
@@ -64,5 +66,6 @@
 </head>
   <body class="bg-gray-50 text-gray-900 font-sans antialiased dark:bg-gray-950 dark:text-white transition-colors duration-300">
     <div id="root"></div>
+    <script type="module" src="./index.tsx"></script>
   </body>
 </html>
